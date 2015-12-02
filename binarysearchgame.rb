@@ -1,16 +1,18 @@
-## Binary Search Game
-  puts " "
-  puts ". " * 40
-  puts " "
+## BINARY SEARCH GAME
+## by Rubynettes - v0.1
+
+## Asking for user name, prompting user to enter a number between 1 and 100
+ 
+  puts "- " * 40
   puts "BINARY SEARCH GAME"
   print "Player Name: "
   $user = gets.chomp.to_s
   puts "Welcome, #{$user}"
   puts " "
-  puts ". " * 40
-  puts "\nPlease enter a number between 0 an 10:\n"
+  puts "- " * 40
+  puts "\nPlease enter a number between 0 an 100:\n"
 
-
+## Method to utilize the user number, generate computer number
 
 def guessing
   print "=> "
