@@ -8,33 +8,26 @@ mid = 0
 current = 0
 step = 0
 
+
 # Welcome
 puts "- " * 40
 puts "BINARY SEARCH GAME"
 puts "by Rubynettes v0.1\n"
 
-# Get User Name
-print "Please enter your name: "
-user = gets.chomp.to_s
-
 # Prompt User for Number
 puts " "
-puts "Why hello, #{user}!"
 puts "Please give me a number that I can guess."
 puts "The number needs to be between 1 and 100."
 print "Enter number: "
 usernumber = gets.chomp.to_i
 
-
 # Debugging - Show number
 puts "I cheated. It's #{usernumber}"
 
 
-
-def try_response
-	puts "Let user answer"
+def less_more_equal
+	puts "Is it less, more or equal?"
 	response = gets.chomp.to_s
-	
 	if response == "="
 		puts "bingo"
 	elsif response == "<"
@@ -44,9 +37,7 @@ def try_response
 	end
 end
 
-try_response
-
-## GUESSWORK:
+less_more_equal
 
 
 # Reporting current range to user
@@ -76,7 +67,6 @@ def lower_than_current(middle,highest)
 	current = (middle / 2) - highest
 	return current
 end
-
 
 def track_response(current)
 	puts "Is it #{current}, higher or lower?"
