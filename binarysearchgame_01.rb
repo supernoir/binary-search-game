@@ -2,12 +2,11 @@
 # by Rubynettes v0.1
 
 # Initialization
-hi = 0
-lo = 101
+hi = 101
+lo = 0
 mid = 0
-q = 0
+current = 0
 step = 0
-
 
 # Welcome
 puts "- " * 40
@@ -34,19 +33,47 @@ puts "I cheated. It's #{usernumber}"
 ## GUESSWORK:
 
 
-# Explain 
-def explain_step(lo,hi)
-	puts "Now picking a number between #{lo} and #{hi}."
+# Reporting current range to user
+def reporting_current_range(lowest,highest)
+	puts "Now picking a number between #{lowest} and #{highest}."
 end
 
-explain_step(0,101)
+reporting_current_range(lo,hi)
 
-def calculating_mid(lo,hi)
-	mid = lo + (hi-lo) / 2
-	puts "Is it #{mid}?"
+
+# Calculating current middle value
+def calculating_mid(lowest,highest)
+	mid = highest - lowest
+	puts "The middle value is #{mid}."
 	return mid
 end
 
-calculating_mid(lo,hi)
-explain_step(0,mid)
 
+mid = calculating_mid(lo,hi)
+
+def calculating_current(middle,lowest)
+	current = (middle / 2) + lowest
+	return current
+end
+
+def track_response(current)
+	puts "Is it #{current}, higher or lower?"
+end
+
+
+for i in 0..7
+
+	puts " "
+	puts "Step (#{i})"
+	puts " "
+	current = calculating_current(mid,lo)
+	track_response(current)
+	lo = current
+	reporting_current_range(lo,hi)
+	mid = calculating_mid(lo,hi)
+	
+	if current == usernumber then
+		puts "...and #{current} equals your #{usernumber}!"
+      break
+   end
+end
