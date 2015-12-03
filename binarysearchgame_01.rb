@@ -30,6 +30,22 @@ usernumber = gets.chomp.to_i
 puts "I cheated. It's #{usernumber}"
 
 
+
+def try_response
+	puts "Let user answer"
+	response = gets.chomp.to_s
+	
+	if response == "="
+		puts "bingo"
+	elsif response == "<"
+		puts "less!"
+	else
+		puts "more!"
+	end
+end
+
+try_response
+
 ## GUESSWORK:
 
 
@@ -51,29 +67,34 @@ end
 
 mid = calculating_mid(lo,hi)
 
-def calculating_current(middle,lowest)
+def higher_than_current(middle,lowest)
 	current = (middle / 2) + lowest
 	return current
 end
+
+def lower_than_current(middle,highest)
+	current = (middle / 2) - highest
+	return current
+end
+
 
 def track_response(current)
 	puts "Is it #{current}, higher or lower?"
 end
 
 
-for i in 0..7
+# A big bad while loop
 
+while current != usernumber do
+	step = step + 1
 	puts " "
-	puts "Step (#{i})"
+	puts "Step (#{step})"
 	puts " "
-	current = calculating_current(mid,lo)
+	current = higher_than_current(mid,lo)
+#	current = lower_than_current(mid,hi)
 	track_response(current)
 	lo = current
 	reporting_current_range(lo,hi)
-	mid = calculating_mid(lo,hi)
-	
-	if current == usernumber then
-		puts "...and #{current} equals your #{usernumber}!"
-      break
-   end
+	mid = calculating_mid(lo,hi)	
 end
+
