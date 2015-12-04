@@ -1,0 +1,9 @@
+66
+
+LO	HI	MID QUESTION ANSWER
+0	101 101 51? 	 MORE (Q is new LO)
+51	101	50	76?		 LESS (Q is new HI)
+51	76	25	64?		 MORE (Q is new LO)
+64 	76	12	70?		 LESS (Q is new HI)
+64	70	6	67?		 LESS (Q is new HI)
+64	67	3	66		 BINGO

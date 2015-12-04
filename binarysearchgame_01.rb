@@ -28,33 +28,24 @@ usernumber = gets.chomp.to_i
 # puts "I cheated. It's #{usernumber}"
 
 
-def less_more_equal (less,more,equal)
+def less_more_equal
 	puts "Is it less, more or equal?"
 	response = gets.chomp.to_s
 	if response == "less"
-		less = true
-		more = false
-		equal = false
+		return true
 	elsif response == "more"
-		less = false
-		more = true
-		equal = false
+		return false
 	else
-		less = false
-		more = false
-		equal = false
+		return nil
 	end
 end
 
-less_more_equal(less,more,equal)
 
 
 # Reporting current range to user
 def reporting_current_range(lowest,highest)
 	puts "Now picking a number between #{lowest} and #{highest}."
 end
-
-reporting_current_range(lo,hi)
 
 
 # Calculating current middle value
@@ -65,21 +56,21 @@ def calculating_mid(lowest,highest)
 end
 
 
-mid = calculating_mid(lo,hi)
-
 def higher_than_current(middle,lowest)
 	current = (middle / 2) + lowest
 	return current
 end
 
-def lower_than_current(middle,lowest)
-	current = (middle / 2) + lowest
+def lower_than_current(middle,highest)
+	current = (middle / 2) - highest
 	return current
 end
 
 def track_response(current)
-	puts "Is it #{current}, higher or lower?"
+	puts "I am currently at #{current}."
 end
+
+
 
 
 # A big bad while loop
@@ -90,21 +81,22 @@ while current != usernumber do
 	puts "Step (#{step})"
 	puts " "
 	
-	if less_more_equal == false
+		reporting_current_range(lo,hi)
+		mid = calculating_mid(lo,hi)
+	
+	if less == false
 		current = higher_than_current(mid,lo)
 		track_response(current)
-		less_more_equal(less,more,equal)
+		less_more_equal
 		hi = current
-		reporting_current_range(lo,hi)
-		mid = calculating_mid(lo,hi)
+
 		
-	elsif less_more_equal == true
-		current = lower_than_current(mid,lo)
+	elsif less == true
+		current = lower_than_current(mid,hi)
 		track_response(current)
-		less_more_equal(less,more,equal)
+		less_more_equal
 		lo = current
-		reporting_current_range(lo,hi)
-		mid = calculating_mid(lo,hi)
+
 		
 	else
 		puts "BINGO!"
