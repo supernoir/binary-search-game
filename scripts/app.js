@@ -1,6 +1,11 @@
 // BINARY SEARCH GAME
 // by Rubynettes v0.1
 
+angular.module("theBinarySearchGame", [])
+.controller('mainCtrl', function($scope){
+//$scope.value = '';
+})
+
 // Initialization
 var $highest = 101
 var $lowest = 0
@@ -10,8 +15,10 @@ var $step = 0
 
 
 // Prompt User for Number
-var $usernumber = document.getElementById("number").value;
-document.write($usernumber);
+function getUserNumber(){
+	var x = document.getElementById("number").value;
+
+}
 
 // Report current range
 function reportRange(lowest,highest){
