@@ -22,21 +22,24 @@ reportRange($lowest,$highest)
 
 // Calculate middle of range
 function calculateMiddle(lowest, highest){
-	middle = highest - lowest;
-	document.write(highest + " - " + lowest + " = " + middle);
-	return middle
+	$middle = $highest - $lowest;
+	document.write($highest + " - " + $lowest + " = " + $middle);
+	return $middle;
 }
-calculateMiddle($lowest,$highest)
+calculateMiddle($lowest,$highest);
+
+// Propose calculated number
+
+function askQuestion(middle,lowest){
+	var $question = Math.ceil(($middle/2) + $lowest);
+	document.write("<p>So " + $middle + "/2" + " = " + Math.ceil($middle/2) + " added to " + $lowest + "...</p>");
+	document.write("Can it be " + $question + "?");
+	return $question;
+}
+
+askQuestion($middle,$lowest);
+
 /*
-# Propose calculated number
-def ask_question(middle,lowest)
-	question = (middle / 2) + lowest
-	puts "So #{middle}/2 = #{middle/2} added to #{lowest}..."
-	puts "Can it be #{question}?"	
-	return question
-end
-
-
 #	Loop through calculation and user input
 #	until win state is reached
 
