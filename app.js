@@ -10,7 +10,7 @@ var $step = 0
 
 
 // Prompt User for Number
-var $usernumber = document.getElementById("number");
+var $usernumber = document.getElementById("number").value;
 document.write($usernumber);
 
 // Report current range
@@ -18,7 +18,7 @@ function reportRange(lowest,highest){
 	document.write("The Range is between " + $lowest + " and " + $highest + ".\n");
 }
 
-reportRange($lowest,$highest)
+reportRange($lowest,$highest);
 
 // Calculate middle of range
 function calculateMiddle(lowest, highest){
@@ -26,6 +26,7 @@ function calculateMiddle(lowest, highest){
 	document.write($highest + " - " + $lowest + " = " + $middle);
 	return $middle;
 }
+
 calculateMiddle($lowest,$highest);
 
 // Propose calculated number
@@ -43,7 +44,7 @@ askQuestion($middle,$lowest);
 //	Loop through calculation and user input
 //	until win state is reached
 
-while ($question != 66){
+/*while ($question != 66){
 	$step = $step + 1;
 	document.write("<p>Step (" + $step + ")</p>");
 	
@@ -52,12 +53,12 @@ while ($question != 66){
 	$question = askQuestion($middle,$lowest);
 
 	document.write("Is it less or more?");
-	answer = prompt.toString();
+	/*answer = prompt;
 	
 	switch (answer) {
 	case "less":
-		$highest = $question
+		$highest = $question;
 	case "more":
-		$lowest = $question
+		$lowest = $question;
 	}		
-}
+}*/
