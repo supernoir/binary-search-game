@@ -15,10 +15,9 @@ var $step = 0
 
 
 // Prompt User for Number
-function getUserNumber(){
+/*function getUserNumber(){
 	var x = document.getElementById("number").value;
-
-}
+}*/
 
 // Report current range
 function reportRange(lowest,highest){
