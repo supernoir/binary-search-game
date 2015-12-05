@@ -12,29 +12,29 @@ step = 0
 # Welcome
 puts "- " * 40
 puts "BINARY SEARCH GAME"
-puts "by Rubynettes v0.1\n"
+puts "by Rubynettes v0.2\n"
+puts "- " * 40
 
 # Prompt User for Number
-puts " "
-puts "Please give me a number that I can guess."
+puts "\nPlease give me a number that I can guess."
 puts "The number needs to be between 1 and 100."
 print "Enter number: "
 usernumber = gets.chomp.to_i
 
 
-# Reporting range
+# Report current range
 def report_range(lowest,highest)
 	puts "The Range is between #{lowest} and #{highest}."
 end
 
-# Calculating middle
+# Calculate middle of range
 def calculate_middle(lowest,highest)
 	middle = highest - lowest
 	puts "#{highest} - #{lowest} = #{middle}"
 	return middle
 end
 
-# Asking Question with an informed guess
+# Propose calculated number
 def ask_question(middle,lowest)
 	question = (middle / 2) + lowest
 	puts "So #{middle}/2 = #{middle/2} added to #{lowest}..."
@@ -43,8 +43,8 @@ def ask_question(middle,lowest)
 end
 
 
-
-# Where the magic happens
+#	Loop through calculation and user input
+#	until win state is reached
 
 while question != usernumber do
 	step = step + 1
@@ -64,5 +64,3 @@ while question != usernumber do
 		lowest = question
 	end		
 end
-	
-
