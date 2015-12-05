@@ -39,32 +39,25 @@ function askQuestion(middle,lowest){
 
 askQuestion($middle,$lowest);
 
-/*
-#	Loop through calculation and user input
-#	until win state is reached
 
-while question != usernumber do
-	step = step + 1
-	puts "\nStep (#{step})\n\n"
+//	Loop through calculation and user input
+//	until win state is reached
+
+while ($question != 66){
+	$step = $step + 1;
+	document.write("<p>Step (" + $step + ")</p>");
 	
-	report_range(lowest,highest)
-	middle = calculate_middle(lowest,highest)
-	question = ask_question(middle,lowest)
+	reportRange($lowest,$highest);
+	$middle = calculateMiddle($lowest,$highest);
+	$question = askQuestion($middle,$lowest);
 
-	puts "Is it less or more?"
-	answer = gets.chomp.to_s
+	document.write("Is it less or more?");
+	answer = prompt.toString();
 	
-	case answer
-	when "less"
-		highest = question
-	when "more"
-		lowest = question
-	end		
-end
-
-function getUserNumber(userNumber){
-	var $user_number = 0;
-	prompt($user_number);
-	document.write($user_number);
+	switch (answer) {
+	case "less":
+		$highest = $question
+	case "more":
+		$lowest = $question
+	}		
 }
-*/
