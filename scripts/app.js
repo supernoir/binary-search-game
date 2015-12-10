@@ -14,11 +14,6 @@ var $question = 0
 var $step = 0
 
 
-// Prompt User for Number
-/*function getUserNumber(){
-	var x = document.getElementById("number").value;
-}*/
-
 // Report current range
 function reportRange(lowest,highest){
 	document.write("The Range is between " + $lowest + " and " + $highest + ".\n");
@@ -50,7 +45,7 @@ askQuestion($middle,$lowest);
 //	Loop through calculation and user input
 //	until win state is reached
 
-/*while ($question != 66){
+/* while ($question != 66){
 	$step = $step + 1;
 	document.write("<p>Step (" + $step + ")</p>");
 	
@@ -58,7 +53,7 @@ askQuestion($middle,$lowest);
 	$middle = calculateMiddle($lowest,$highest);
 	$question = askQuestion($middle,$lowest);
 
-	document.write("Is it less or more?");
+	document.write("Is it less or more?");}
 	/*answer = prompt;
 	
 	switch (answer) {
