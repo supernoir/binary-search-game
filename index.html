@@ -40,18 +40,21 @@
   </div>
         </div>
             <h3>You picked {{$usernumber}}!</h3>
-            <a href="" class="btn btn-default" role="button" ng-click="">Start Game</a>
+            <a href="" class="btn btn-default" role="button" ng-click="reportRange(lowest,highest)">Start Game</a>
+            <h3 id="range"></h3>
       </form>
     </div>
   </div>
     
-  <div class="panel panel-default">
+  <div class="panel panel-info">
     <div class="panel-heading">
       <h2>Step 1</h2>
     </div>
     <div class="panel-body">
-      <p class="lead"><strong>Pick a number between 0 and 100...</strong></p>
-      <h3>You picked <mark>{{$reportRange}}</mark></h3>
+      <p class="lead"><strong>Report Range</strong></p>
+      <h3>Is your number higher or lower?</h3>
+      <a href="" class="btn btn-default" role="button" ng-click=""><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Higher</a>
+      <a href="" class="btn btn-default" role="button" ng-click=""><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Lower</a>
     </div>
   </div>    
     

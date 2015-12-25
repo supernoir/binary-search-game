@@ -3,9 +3,7 @@
 
 angular.module("theBinarySearchGame", [])
 .controller('mainCtrl', function($scope){
-//$scope.value = '';
-})
-
+    
 // Initialization
 var $highest = 101
 var $lowest = 0
@@ -13,13 +11,13 @@ var $middle = 0
 var $question = 0
 var $step = 0
 
-
-// Report current range
-function reportRange(lowest,highest){
-	document.write("The Range is between " + $lowest + " and " + $highest + ".\n");
+$scope.reportRange = function() {  
+	document.getElementById("range").innerHTML = "The Range is between " + $lowest + " and " + $highest + ".\n";
 }
 
-reportRange($lowest,$highest);
+})
+
+
 
 // Calculate middle of range
 function calculateMiddle(lowest, highest){
@@ -28,7 +26,7 @@ function calculateMiddle(lowest, highest){
 	return $middle;
 }
 
-calculateMiddle($lowest,$highest);
+//calculateMiddle($lowest,$highest);
 
 // Propose calculated number
 
@@ -39,7 +37,7 @@ function askQuestion(middle,lowest){
 	return $question;
 }
 
-askQuestion($middle,$lowest);
+//askQuestion($middle,$lowest);
 
 
 //	Loop through calculation and user input
