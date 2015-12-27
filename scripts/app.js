@@ -15,6 +15,14 @@ $scope.reportRange = function(lowest,highest) {
 	document.getElementById("range").innerHTML = "The Range is between " + lowest + " and " + highest + ".\n";
 }
 
+$scope.calculateMiddle  = function(lowest,highest) {
+    
+    middle = highest - lowest;
+    document.getElementById("middle").innerHTML = highest + " - " + lowest + " = " + middle;
+    return middle;
+}
+
+
 })
 
 

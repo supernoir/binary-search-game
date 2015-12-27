@@ -40,8 +40,8 @@
   </div>
         </div>
             <h3>You picked {{$usernumber}}!</h3>
-            <a href="" class="btn btn-default" role="button" ng-click="reportRange(lowest,highest)">Start Game</a>
-            <h3 id="range"></h3>
+            <a href="" class="btn btn-default" role="button" ng-click="reportRange(lowest,highest);calculateMiddle(lowest,highest);">Start Game</a>
+            
       </form>
     </div>
   </div>
@@ -51,7 +51,8 @@
       <h2>Step 1</h2>
     </div>
     <div class="panel-body">
-      <p class="lead"><strong>Report Range</strong></p>
+      <h3 id="range"></h3>
+      <h3 id="middle"></h3>      
       <h3>Is your number higher or lower?</h3>
       <a href="" class="btn btn-default" role="button" ng-click=""><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Higher</a>
       <a href="" class="btn btn-default" role="button" ng-click=""><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Lower</a>
