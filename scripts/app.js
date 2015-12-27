@@ -5,14 +5,14 @@ angular.module("theBinarySearchGame", [])
 .controller('mainCtrl', function($scope){
     
 // Initialization
-var $highest = 101
-var $lowest = 0
-var $middle = 0
-var $question = 0
-var $step = 0
+$scope.highest = 101
+$scope.lowest = 0
+$scope.middle = 0
+$scope.question = 0
+$scope.step = 0
 
-$scope.reportRange = function() {  
-	document.getElementById("range").innerHTML = "The Range is between " + $lowest + " and " + $highest + ".\n";
+$scope.reportRange = function(lowest,highest) {  
+	document.getElementById("range").innerHTML = "The Range is between " + lowest + " and " + highest + ".\n";
 }
 
 })
