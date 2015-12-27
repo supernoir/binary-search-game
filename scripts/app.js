@@ -5,51 +5,47 @@ angular.module("theBinarySearchGame", [])
 .controller('mainCtrl', function($scope){
     
 // Initialization
-$scope.highest = 101
-$scope.lowest = 0
-$scope.middle = 0
-$scope.question = 0
-$scope.step = 0
+$scope.highest = 101;
+$scope.lowest = 0;
+$scope.middle = 0;
+$scope.question = 0;
+$scope.step = 0;
 
-$scope.reportRange = function(lowest,highest) {  
+// Report the Range
+$scope.reportRange = function(lowest,highest){  
 	document.getElementById("range").innerHTML = "The Range is between " + lowest + " and " + highest + ".\n";
 }
 
-$scope.calculateMiddle  = function(lowest,highest) {
-    
+// Calculate Middle value between lowest and highest number
+$scope.calculateMiddle  = function(lowest,highest){
     middle = highest - lowest;
-    document.getElementById("middle").innerHTML = highest + " - " + lowest + " = " + middle;
-    return middle;
+    document.getElementById("middle").innerHTML = "The middle value is " + highest + " - " + lowest + " = " + middle;
+    return $scope.middle;
 }
 
-
-})
-
-
-
-// Calculate middle of range
-function calculateMiddle(lowest, highest){
-	$middle = $highest - $lowest;
-	document.write($highest + " - " + $lowest + " = " + $middle);
-	return $middle;
+$scope.askQuestion = function(middle,lowest){
+    question = Math.ceil(middle/2 + lowest);
+    document.getElementById("guess").innerHTML =
+        "<p>So " + middle + "/2" + " = " + Math.ceil(middle/2) + " added to " + lowest + "...</p>"
+        + "<p> Can it be " + question + "?</p>";
+        return $scope.question;
 }
-
-//calculateMiddle($lowest,$highest);
-
-// Propose calculated number
-
-function askQuestion(middle,lowest){
-	var $question = Math.ceil(($middle/2) + $lowest);
-	document.write("<p>So " + $middle + "/2" + " = " + Math.ceil($middle/2) + " added to " + $lowest + "...</p>");
-	document.write("Can it be " + $question + "?");
-	return $question;
-}
-
-//askQuestion($middle,$lowest);
 
 
 //	Loop through calculation and user input
 //	until win state is reached
+
+$scope.binarySearch = function(step){    
+    step = step + 1;
+    document.getElementById("step").innerHTML = "Step " + step;
+    return $scope.step;
+}
+
+
+});
+
+
+
 
 /* while ($question != 66){
 	$step = $step + 1;
