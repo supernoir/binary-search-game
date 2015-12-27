@@ -10,6 +10,7 @@ $scope.lowest = 0;
 $scope.middle = 0;
 $scope.question = 0;
 $scope.step = 0;
+//$scope.usernumber = 1;
 
 // Report the Range
 $scope.reportRange = function(lowest,highest){  
@@ -35,16 +36,18 @@ $scope.askQuestion = function(middle,lowest){
 //	Loop through calculation and user input
 //	until win state is reached
 
-$scope.binarySearch = function(lowest,middle,highest,question,step){    
+$scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){    
     step = step + 1;
     document.getElementById("step").innerHTML = "Step " + step;
-   
 	$scope.reportRange(lowest,highest);
 	middle = $scope.calculateMiddle(lowest,highest);
 	question = $scope.askQuestion(middle,lowest);
    
+/*    while (question != usernumber){
+       console.log("it's not");
+   }*/
    
-    return $scope.lowest,$scope.middle,$scope.highest,$scope.question,$scope.step;
+    return $scope.lowest,$scope.middle,$scope.highest,$scope.question,$scope.step,$scope.usernumber;
 }
 
 
