@@ -37,32 +37,35 @@ $scope.askQuestion = function(middle,lowest){
 //	until win state is reached
 
 $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){    
+    
+//  while (question != usernumber){
     step = step + 1;
     document.getElementById("step").innerHTML = "Step " + step;
+    
 	$scope.reportRange(lowest,highest);
 	middle = $scope.calculateMiddle(lowest,highest);
 	question = $scope.askQuestion(middle,lowest);
-   
-/*    while (question != usernumber){
-       console.log("it's not");
-   }*/
-   
+    
+//  }
+
+
     return $scope.lowest,$scope.middle,$scope.highest,$scope.question,$scope.step,$scope.usernumber;
 }
 
+
+$scope.goUp = function(){
+    document.getElementById("counter").innerHTML = "Up";
+}
+
+$scope.goDown = function(){
+    document.getElementById("counter").innerHTML = "Down";
+}
 
 });
 
 
 
-
 /* while ($question != 66){
-	$step = $step + 1;
-	document.write("<p>Step (" + $step + ")</p>");
-	
-	reportRange($lowest,$highest);
-	$middle = calculateMiddle($lowest,$highest);
-	$question = askQuestion($middle,$lowest);
 
 	document.write("Is it less or more?");}
 	/*answer = prompt;
