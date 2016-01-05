@@ -53,12 +53,16 @@ $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){
 }
 
 
-$scope.goUp = function(){
+$scope.goDown = function(lowest,middle,highest,question,step,usernumber){
     document.getElementById("counter").innerHTML = "Up";
+    highest = question;
+    $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
 }
 
-$scope.goDown = function(){
+$scope.goUp = function(lowest,middle,highest,question,step,usernumber){
     document.getElementById("counter").innerHTML = "Down";
+    lowest = question;
+    $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
 }
 
 });
