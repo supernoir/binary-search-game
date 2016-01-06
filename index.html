@@ -24,7 +24,7 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2>Pick a Number</h2>
+      <h2><span class="glyphicon glyphicon-user"></span> Pick a Number</h2>
     </div>
     <div class="panel-body">
       <p class="lead"><strong>Pick a number between 0 and 100...</strong></p>
@@ -39,7 +39,7 @@
       Not valid number!</span>
   </div>
         </div>
-            <h3>You picked {{usernumber}}!</h3>
+            <h4>Pssst! Don't tell me you picked {{usernumber}}!</h4>
             <a href="" class="btn btn-default" role="button" ng-click="binarySearch(lowest,middle,highest,question,step,usernumber);">Start Game</a>
             
       </form>
@@ -48,7 +48,7 @@
     
   <div class="panel panel-info" id="calculation" ng-hide="winState(question,step,usernumber);">
     <div class="panel-heading">
-      <h2 id="step"></h2>
+      <h2><span class="glyphicon glyphicon-sunglasses"></span> <span id="step"></span></h2>
     </div>
     <div class="panel-body"> 
       <h3 id="range"></h3>
@@ -63,7 +63,7 @@
   </div>
     <div class="panel panel-success" id="winState" ng-show="winState(question,step,usernumber);">
     <div class="panel-heading">
-      <h2>I have found your number!</h2>
+      <h2><span class="glyphicon glyphicon-sunglasses"></span> <span>I have found your number!</span></h2>
     </div>
     <div class="panel-body"> 
       <h3>Your number was {{usernumber}}!</h3>
