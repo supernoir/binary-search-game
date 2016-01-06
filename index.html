@@ -40,7 +40,7 @@
   </div>
         </div>
             <h3>You picked {{usernumber}}!</h3>
-            <a href="" class="btn btn-default" role="button" ng-click="binarySearch(lowest,middle,highest,step,question,usernumber);">Start Game</a>
+            <a href="" class="btn btn-default" role="button" ng-click="binarySearch(lowest,middle,highest,question,step,usernumber);">Start Game</a>
             
       </form>
     </div>
@@ -56,8 +56,8 @@
       <h3 id="guess"></h3> 
 
       <h3>Is your number higher or lower?</h3>
-      <a href="" class="btn btn-default" role="button" ng-click="goUp();"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Higher</a>
-      <a href="" class="btn btn-default" role="button" ng-click="goDown();"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Lower</a>
+      <a href="" class="btn btn-default" role="button" ng-click="goUp(lowest,middle,highest,question,step,usernumber);"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Higher</a>
+      <a href="" class="btn btn-default" role="button" ng-click="goDown(lowest,middle,highest,question,step,usernumber);"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Lower</a>
       <h1 id="counter"></h1>
     </div>
   </div>    

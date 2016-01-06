@@ -38,7 +38,7 @@ $scope.askQuestion = function(middle,lowest){
 
 $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){    
     
-    step = step + 1;
+    step += 1;
     document.getElementById("step").innerHTML = "Step " + step;
     
 	$scope.reportRange(lowest,highest);
@@ -46,8 +46,12 @@ $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){
 	question = $scope.askQuestion(middle,lowest);
     console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
 
-
-    return lowest,middle,highest,question,step,usernumber;
+    $scope.lowest = lowest;
+    $scope.middle = middle;
+    $scope.highest = highest;
+    $scope.question = question;
+    $scope.step = step;
+    $scope.usernumber = usernumber;
 }
 
 
@@ -58,20 +62,8 @@ $scope.goDown = function(lowest,middle,highest,question,step,usernumber){
 }
 
 $scope.goUp = function(lowest,middle,highest,question,step,usernumber){
-    console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
+    console.log("lowest: " + $scope.lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
     lowest = question;
     $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
-
     }
 });
-
-
-
-/* while ($question != 66){
-	switch (answer) {
-	case "less":
-		$highest = $question;
-	case "more":
-		$lowest = $question;
-	}		
-}*/
