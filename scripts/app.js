@@ -1,16 +1,15 @@
 // BINARY SEARCH GAME
-// by Rubynettes v0.1
+// by Rubynettes v0.0.2
 
 angular.module("theBinarySearchGame", [])
 .controller('mainCtrl', function($scope){
     
 // Initialization
 $scope.highest = 101;
-$scope.lowest = 0;
+$scope.lowest = 1;
 $scope.middle = 0;
 $scope.question = 0;
 $scope.step = 0;
-//$scope.usernumber = 1;
 
 // Report the Range
 $scope.reportRange = function(lowest,highest){  
@@ -20,16 +19,17 @@ $scope.reportRange = function(lowest,highest){
 // Calculate Middle value between lowest and highest number
 $scope.calculateMiddle  = function(lowest,highest){
     middle = highest - lowest;
+    console.log(middle);   
     document.getElementById("middle").innerHTML = "The middle value is " + highest + " - " + lowest + " = " + middle;
-    return $scope.middle;
+    return middle;
 }
 
 $scope.askQuestion = function(middle,lowest){
-    question = Math.ceil(middle/2 + lowest);
+    question = Math.ceil(middle / 2 + lowest);
     document.getElementById("guess").innerHTML =
         "<p>So " + middle + "/2" + " = " + Math.ceil(middle/2) + " added to " + lowest + "...</p>"
         + "<p> Can it be " + question + "?</p>";
-        return $scope.question;
+        return question;
 }
 
 
@@ -38,42 +38,36 @@ $scope.askQuestion = function(middle,lowest){
 
 $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){    
     
-//  while (question != usernumber){
     step = step + 1;
     document.getElementById("step").innerHTML = "Step " + step;
     
 	$scope.reportRange(lowest,highest);
 	middle = $scope.calculateMiddle(lowest,highest);
 	question = $scope.askQuestion(middle,lowest);
-    
-//  }
+    console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
 
 
-    return $scope.lowest,$scope.middle,$scope.highest,$scope.question,$scope.step,$scope.usernumber;
+    return lowest,middle,highest,question,step,usernumber;
 }
 
 
 $scope.goDown = function(lowest,middle,highest,question,step,usernumber){
-    document.getElementById("counter").innerHTML = "Up";
+    console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
     highest = question;
     $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
 }
 
 $scope.goUp = function(lowest,middle,highest,question,step,usernumber){
-    document.getElementById("counter").innerHTML = "Down";
+    console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
     lowest = question;
     $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
-}
 
+    }
 });
 
 
 
 /* while ($question != 66){
-
-	document.write("Is it less or more?");}
-	/*answer = prompt;
-	
 	switch (answer) {
 	case "less":
 		$highest = $question;
