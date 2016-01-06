@@ -1,5 +1,5 @@
 // BINARY SEARCH GAME
-// by Rubynettes v0.0.2
+// by Rubynettes 0.0.3
 
 angular.module("theBinarySearchGame", [])
 .controller('mainCtrl', function($scope){
@@ -37,7 +37,7 @@ $scope.askQuestion = function(middle,lowest){
 //	until win state is reached
 
 $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){    
-    
+
     step += 1;
     document.getElementById("step").innerHTML = "Step " + step;
     
@@ -51,7 +51,8 @@ $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){
     $scope.highest = highest;
     $scope.question = question;
     $scope.step = step;
-    $scope.usernumber = usernumber;
+    $scope.usernumber = parseInt(usernumber);
+        $scope.winState(question,step,usernumber);
 }
 
 
@@ -66,4 +67,14 @@ $scope.goUp = function(lowest,middle,highest,question,step,usernumber){
     lowest = question;
     $scope.binarySearch(lowest,middle,highest,question,step,usernumber);
     }
+    
+$scope.winState = function(question,step,usernumber){
+            
+        if (question === usernumber){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 });
