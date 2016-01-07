@@ -46,7 +46,8 @@ $scope.binarySearch = function(lowest,middle,highest,question,step,usernumber){
 	question = $scope.askQuestion(middle,lowest);
     console.log("lowest: " + lowest,"middle: " + middle, "highest: " + highest,"question: " + question,"step: " + step,"usernumber: " + usernumber);
 
-    document.getElementById("progress").setAttribute("style", "width:" + middle + "%;");
+    document.getElementById("middle-bar").setAttribute("style", "width:" + middle + "%;");
+    document.getElementById("question-bar").setAttribute("style", "width:" + question + "%;");
     $scope.lowest = lowest;
     $scope.middle = middle;
     $scope.highest = highest;
