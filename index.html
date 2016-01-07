@@ -14,7 +14,7 @@
   
   <nav class="navbar navbar-default navbar-fixed-top">
     <a class="navbar-brand" href="#">rubynett.es</a>
-    <p class="navbar-text">Games - Binary Search 0.0.3</p>
+            <p class="navbar-text">Binary Search 0.0.3</p>
   </nav>
 
   <div class="jumbotron">
@@ -53,12 +53,18 @@
     <div class="panel-body"> 
       <h3 id="range"></h3>
       <h3 id="middle"></h3>
-      <h3 id="guess"></h3> 
+      <h3 id="guess"></h3>
+      
 
       <h3>Is your number higher or lower?</h3>
       <a href="" class="btn btn-default" role="button" ng-click="goUp(lowest,middle,highest,question,step,usernumber);"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Higher</a>
       <a href="" class="btn btn-default" role="button" ng-click="goDown(lowest,middle,highest,question,step,usernumber);"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Lower</a>
       <h1 id="counter"></h1>
+      <div class="progress">
+  <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="{{middle}}" aria-valuemin="0" aria-valuemax="100">
+    {{middle}}%
+  </div>
+</div>
     </div>
   </div>
     <div class="panel panel-success" id="winState" ng-show="winState(question,step,usernumber);">
